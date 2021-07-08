@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import Login from "./Login";
+import styled from "styled-components";
+import { flexCenter } from "./style/mixin";
+
+const Footer = () => {
+  return (
+    <FooterContainer>
+      <span>Ant Design Pro</span>
+      <GithubIcon src="/images/github-logo.svg" alt="github-icon" />
+      <span>Ant Design</span>
+    </FooterContainer>
+  );
+};
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <LoginWrapper>
+      <Login />
+      <Footer />
+    </LoginWrapper>
   );
 }
+
+const LoginWrapper = styled.div`
+  ${flexCenter("flex", "space-between", "center")}
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+`;
+
+const FooterContainer = styled.div`
+  ${flexCenter("flex", "center", "center")}
+  width: 100%;
+  margin-bottom: 40px;
+`;
+
+const GithubIcon = styled.img`
+  height: 15px;
+  width: 15px;
+  margin: 0px 20px;
+`;
 
 export default App;
