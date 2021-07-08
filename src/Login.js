@@ -38,7 +38,6 @@ const Login = () => {
         initialValues={{ remember: true }}
         onFinish={onFinish}
       >
-        {/* // tab을 사용해서 아이디 로그인과 모바일 로그인 분리 */}
         {tab ? <PhoneLogin /> : <AccountLogin />}
         <Form.Item>
           <Form.Item name="remember" valuePropName="checked" noStyle>
